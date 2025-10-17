@@ -24,10 +24,10 @@ export default function Page({ params }) {
 
     const DeleteUrl = async (id) => {
         try {
-            toast("Deleted", {autoClose: 1000})
             const res = await fetch(`/api/delete/${id}`, { method: 'DELETE' })
             const data = await res.json() // ✅ safe now
             if (data.success) {
+                toast("Deleted", { autoClose: 1000 })
                 seturls(urls.filter(u => u._id !== id))
             } else {
                 alert(data.message)
@@ -56,7 +56,7 @@ export default function Page({ params }) {
                         <div className='url my-10 mx-5 px-2 w-[70vw] bg-purple-400 rounded-lg flex' key={item._id}>
                             <div className="urls">
                                 <Link className=' cursor-pointer ' target="_blank" href={item.url}><div ><span className='font-bold  w-[60vw] truncate ellipsis'>Original Url: </span><code>{item.url}</code></div></Link>
-                                <Link target='_blank' href={item.shorturl}><div><span className='font-bold w-[60vw] truncate ellipsis'>Shortened Url: </span><code >{item.shorturl}</code></div></Link>
+                                <Link target='_blank' href={`https://cuturl-cz24tyep2-zaid-muqris-projects.vercel.app/${item.shorturl}`}><div><span className='font-bold w-[60vw] truncate ellipsis'>Shortened Url: </span><code >{item.shorturl}</code></div></Link>
                             </div>
                             <div className="actions flex w-full justify-end items-center h-[10vh]">
                                 <button

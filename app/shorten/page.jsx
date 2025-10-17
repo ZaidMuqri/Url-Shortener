@@ -45,7 +45,7 @@ const page = () => {
                 if(result.success){
 
                     setgenerated(true)
-                    setshortlink(`https://cuturl-one.vercel.app/${shorturl}`)
+                    setshortlink(`https://cuturl-cz24tyep2-zaid-muqris-projects.vercel.app/${shorturl}`)
                 }
             }
 
