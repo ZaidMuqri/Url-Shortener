@@ -1,0 +1,12 @@
+/* For WebKit-based browsers (Chrome, Safari, Edge, etc.) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+  width: 0; /* Ensures no space is taken by the scrollbar */
+  height: 0;
+}
+
+.ellipsis {
+  white-space: nowrap;        /* Keep text on a single line */
+  overflow: hidden;           /* Hide anything that overflows */
+  text-overflow: ellipsis;    /* Show ... at the end */
+}
