@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         {children}
         <Script
           src="https://cdn.lordicon.com/lordicon.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
       </body>
     </html>
