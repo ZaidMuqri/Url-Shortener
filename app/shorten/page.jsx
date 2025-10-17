@@ -45,15 +45,12 @@ const page = () => {
                 if(result.success){
 
                     setgenerated(true)
-                    setshortlink(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`)
+                    setshortlink(`https://cuturl-one.vercel.app/${shorturl}`)
                 }
             }
 
             )
             .catch((error) => console.log("error", error));
-
-
-
 
 
     }
