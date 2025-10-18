@@ -3,6 +3,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { ToastContainer, toast } from 'react-toastify';
+import Navbar from '../components/Navbar';
+
 
 const page = () => {
     const [url, seturl] = useState("")
@@ -42,8 +45,9 @@ const page = () => {
                 setmessage(result.message)
                 seturl("")
                 setshorturl("")
-                if(result.success){
+                if (result.success) {
 
+                    toast("Url Generated", { autoClose: 2000 })
                     setgenerated(true)
                     setshortlink(`https://cuturl-cz24tyep2-zaid-muqris-projects.vercel.app/${shorturl}`)
                 }
@@ -55,20 +59,22 @@ const page = () => {
 
     }
     return (
-        <div className="cont w-screen h-[91.7%] bg-purple-100 absolute top-11 left-0 flex justify-center ">
+        <div className="h-screen absolute flex flex-col items-center">
+            <Navbar />
+            <ToastContainer />
 
-            <div className='rounded-lg flex flex-col items-center justify-center mt-17 bg-purple-200 px-15 py-8 w-120 h-70 '>
-                <div className="inputs flex flex-col items-start">
-                    <div className="gen font-bold text-lg w-full ml-4 my-2">Generate your short URL's</div>
+            <div className='rounded-lg flex flex-col items-center justify-center mt-17 bg-purple-200 px-15 md:w-120 md:h-70 h-[50vh] w-[95%] sm:w-[80vw]'>
+                <div className="inputs flex flex-col md:items-start items-center w-[120%]">
+                    <div className="gen font-bold md:text-lg w-full ml-4 my-2">Generate your short URL's</div>
                     <div className="message text-purple-900 font-bold ml-4">{message}</div>
                     <input
-                        className='focus:outline-purple-600 h-8 w-90 my-2 px-2 rounded-lg mx-4 bg-white'
+                        className='focus:outline-purple-600 h-8 w-[95%] my-2 px-2 rounded-lg mx-4 bg-white'
                         type="text"
                         value={url}
                         onChange={changeint}
                         placeholder='Enter your URL' />
                     <input
-                        className='focus:outline-purple-600 h-8 w-90 my-2 px-2 rounded-lg mx-4 bg-white'
+                        className='focus:outline-purple-600 h-8 w-[95%] my-2 px-2 rounded-lg mx-4 bg-white'
                         type="text"
                         value={shorturl}
                         onChange={(e) => setshorturl(e.target.value)}
@@ -77,9 +83,9 @@ const page = () => {
                 <div className="generate w-[100%] flex flex-col items-center">
 
                     <button onClick={generate} className="generate h-9 w-full bg-purple-600 flex items-center justify-center rounded-xl py-1 cursor-pointe border hover:border-black hover:shadow-xl/30 text-white my-4">Generate</button>
-                    
+
                     {generated && <Link target='_blank' href={shortlink}><div className="link"><span className='font-bold'>Your Link:</span> <code>{shortlink}</code></div></Link>}
-                    
+
 
                 </div>
             </div>
