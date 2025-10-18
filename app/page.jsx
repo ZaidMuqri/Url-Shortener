@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
+import "./page.css"
 
 
 
 export default function Home() {
   return (
-    <div className="h-screen w-[100vw] bg-purple-200 absolute ">
+    <div className="h-screen w-[100vw] absolute ">
       <Navbar />
 
-      <div className="home md:flex md:flex-row flex flex-col items-center">
+      <div className="home md:flex md:flex-row flex flex-col items-center mt-25 md:mt-0">
 
         <div className="wel w-[70vw] items-center gap-10 pt-10">
 

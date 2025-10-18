@@ -49,7 +49,7 @@ const page = () => {
 
                     toast("Url Generated", { autoClose: 2000 })
                     setgenerated(true)
-                    setshortlink(`https://cuturl-cz24tyep2-zaid-muqris-projects.vercel.app/${shorturl}`)
+                    setshortlink(`https://cuturl-one.vercel.app/${shorturl}`)
                 }
             }
 

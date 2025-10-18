@@ -1,0 +1,11 @@
+    body {
+        background-image: url('/background.jpg');
+        /* Path relative to public folder */
+        background-size: cover;
+        /* Adjust as needed */
+        background-position: center;
+        /* Adjust as needed */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /* Optional: fixes background during scroll */
+    }
