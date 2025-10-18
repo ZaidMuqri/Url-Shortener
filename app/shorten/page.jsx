@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import Navbar from '../components/Navbar';
+import "../page.css"
 
 
 const page = () => {

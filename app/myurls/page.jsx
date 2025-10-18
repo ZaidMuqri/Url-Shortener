@@ -29,7 +29,8 @@ export default function Page({ params }) {
             setempt_list(false)
         }
 
-    })
+
+    },[urls] )
 
     const DeleteUrl = async (id) => {
         try {
@@ -66,7 +67,7 @@ export default function Page({ params }) {
                             <div className='url my-10 mx-5 px-2 w-fit bg-purple-400 rounded-lg flex' key={item._id}>
                                 <div className="urls">
                                     <Link className=' cursor-pointer ' target="_blank" href={item.url}><div className='flex'><span className='font-bold w-30'>Original Url: </span><div className='w-[55vw] overflow-hidden h-[6vh] truncate ellipsis'>{item.url}</div></div></Link>
-                                    <Link target='_blank' href={`https://cuturl-one.vercel.app/${item.shorturl}`}><div className='flex'><span className='font-bold w-30'>Shortened Url: </span><div className='w-[55vw] h-[6vh] truncate ellipsis'>{item.shorturl}</div></div></Link>
+                                    <Link target='_blank' href={`https://cuturl-one.vercel.app/${item.shorturl}`}><div className='flex'><span className='font-bold w-30'>Shortened Url: </span><div className='w-[55vw] h-[6vh] truncate ellipsis'>https://cuturl-one.vercel.app/{item.shorturl}</div></div></Link>
                                 </div>
                                 <div className="actions flex w-full justify-end items-center h-[10vh]">
                                     <button
